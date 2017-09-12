@@ -1,8 +1,8 @@
 readme.md: float_format.o
-	echo '```'
 	cat _readme.md > readme.md
+	echo '```' >> readme.md
 	./float_format.o >> readme.md
-	echo '```'
+	echo '```' >> readme.md
 
 %.o:%.cpp
 	clang++ -Wno-c++98-compat -Weverything -o $@ $< -std=c++14
