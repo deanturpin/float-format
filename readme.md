@@ -1,7 +1,7 @@
 For some reason I've spent a bit of time recently hunting in hex dumps for
-floats. So I thought I'd generate a crib sheet.
+floats. So I thought I'd create a crib sheet.
 
-Running ```make``` generates this readme.
+Running ```make``` generates this readme. See [the C++](float_format.cpp).
 ```
 $ make clean
 rm -f float_format.o readme.md
