@@ -8,7 +8,7 @@ int main() {
 
   // Define some ranges of interest: start, end, increment
   const vector<vector<float>> ranges{
-      {.01f, 0.2f, .01f}, {1.0f, 100.0f, 1.1f}, {3000.0f, 3500.0f, .1f}};
+      {.01f, 0.2f, .01f}, {1.0f, 100.0f, 1.1f}, {3000.0f, 3200.0f, .05f}};
 
   for (const auto &r : ranges) {
 
