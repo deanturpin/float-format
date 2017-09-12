@@ -7,8 +7,10 @@ int main() {
   using namespace std;
 
   // Define some ranges of interest: start, end, increment
-  const vector<vector<float>> ranges{
-      {.01f, 0.2f, .01f}, {1.0f, 100.0f, 1.1f}, {3000.0f, 3200.0f, .05f}};
+  const vector<vector<float>> ranges{{.01f, 0.2f, .01f},
+                                     {1.0f, 100.0f, 1.1f},
+                                     {500.0f, 550.0f, .5f},
+                                     {3000.0f, 3200.0f, .05f}};
 
   for (const auto &r : ranges) {
 
