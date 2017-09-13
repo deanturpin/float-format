@@ -1,4 +1,5 @@
 #include <bitset>
+#include <iomanip>
 #include <iostream>
 #include <vector>
 
@@ -7,7 +8,8 @@ int main() {
   using namespace std;
 
   // Define some ranges of interest: start, end, increment
-  const vector<vector<float>> ranges{{.01f, 0.2f, .01f},
+  const vector<vector<float>> ranges{{0.0f, 0.2f, .01f},
+                                     {1.0f, 20.0f, 1.0f},
                                      {1.0f, 100.0f, 1.1f},
                                      {500.0f, 550.0f, .5f},
                                      {3000.0f, 3200.0f, .05f}};
@@ -28,13 +30,14 @@ int main() {
       auto bit_string = bits.to_string();
 
       // Space out the bits for readability
+      // Insert backwards so the indices are preserved
       // 1 sign, 8 exponent, 23 mantissa
-      bit_string.insert(9, "_");
-      bit_string.insert(1, "_");
+      bit_string.insert(9, " ");
+      bit_string.insert(1, " ");
 
       // Print the hex and the binary
-      cout << hex << bits.to_ulong() << dec << " ";
-      cout << bit_string << " " << f << endl;
+      cout << setw(8) << setfill('0') << hex << bits.to_ulong() << dec << " ";
+      cout << quoted(bit_string) << " " << f << endl;
     }
 
     cout << "```" << endl;
