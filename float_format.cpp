@@ -23,10 +23,18 @@ int main() {
       // Dirty cast rather than truncate
       const auto bin = *reinterpret_cast<unsigned long *>(&f);
 
+      // Convert bits to a string so we can split them up nicely
+      const auto bits = bitset<32>(bin);
+      auto bit_string = bits.to_string();
+
+      // Space out the bits for readability
+      // 1 sign, 8 exponent, 23 mantissa
+      bit_string.insert(9, "_");
+      bit_string.insert(1, "_");
+
       // Print the hex and the binary
-      const bitset<32> bits(bin);
-      cout << "0x" << hex << bits.to_ulong() << dec << " ";
-      cout << bits << " " << f << endl;
+      cout << hex << bits.to_ulong() << dec << " ";
+      cout << bit_string << " " << f << endl;
     }
 
     cout << "```" << endl;
